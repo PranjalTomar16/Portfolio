@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranjal Tomar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-decoration: none;
+  }
+  
+  body {
+    background-color: rgb(0, 0, 33);
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(18, 18, 62);
+    min-width: 100vw;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  nav ul li {
+    list-style: none;
+    margin: 0 23px;
+    cursor: pointer;
+  }
+  nav ul li:hover{
+    background-color: rgba(24, 24, 87);
+    color: blue;
+    
+  }
+  
+  .left {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    display: flex;
+    justify-content: space-around;
+  }
+  .leftSection, .rightSection{
+    /* margin: 50px 0; */
+    margin-top: 100px;
+  }
+  .leftSection p{
+    font-size: 25px;
+    margin-left: 25px;
+  
+  }
+  /* ___________________________________________ */
+  .about-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(18, 18, 62);
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 50px 0;
+  }
+  
+  .about-content {
+    max-width: 600px;
+    color: white;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* ___________________________________________ */
+  /* Add this style for the new skills-section */
+  /* Update the style for the new skills-section */
+  /* Update the style for the new skills-section */
+  .skills-section {
+    /* background-color: rgb(18, 18, 62); */
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px 0;
+    color: white;
+  }
+  
+  .skills-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  /* Add this style for the new education-section */
+  .education-section {
+    background-color: rgb(18, 18, 62);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px 0;
+    color: white;
+  }
+  
+  .education-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .education-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .education-details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  @media screen and (max-width: 480px) {
+    section {
+      flex-direction: column; /* Change the flex-direction to column for smaller screens */
+    }
+    .rightSection img {
+      display: block; /* Make the image a block element */
+      width: 100%; /* Ensure the image takes the full width of its container */
+      margin-top: 20px; /* Add some spacing between the image and the text */
+    }
+    .left{
+      display: none;
+    }
+    
+  }
+  /* Existing styles */
+  .skill-category {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar h3 {
+    margin: 0;
+    padding: 0 10px;
+    color: white;
+  }
+  
+  .progress {
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 0 10px 10px 0;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  /* Additional styles for your progress bars */
+  .skills-section {
+    text-align: center;
+  }
+  
+  .skills-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Style for the circular progress bar with outline */
+  .progress-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #eee;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .progress-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .progress-outline {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#ccc 0%, #ccc 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .progress-fill {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#4CAF50 0%, #4CAF50 var(--percent), #eee var(--percent), #eee 100%);
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 0%, 0% 100%, 50% 100%, 50% var(--percent));
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .progress-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
+  
+  
+  
+  /* Add this style for the footer */
+  
+  /* Default style for the footer */
+  .footer-section {
+    background-color: rgb(10, 10, 51);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-info,
+  .footer-links,
+  .footer-social {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .footer-info p,
+  .footer-links ul,
+  .footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li,
+  .footer-social ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-copyright {
+    margin-top: 20px;
+  }
+  
+  /* Style for links on hover */
+  a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .border {
+    background-color: rgb(18, 18, 62);
+  }
+  
+  /* Media query for screens with a width of 480px or less */
+  @media screen and (max-width: 480px) {
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        flex: 1 1 100%; /* Make each box take up full width on smaller screens */
+    }
+  
+    .footer-section {
+        padding: 40px 10px; /* Adjusted padding for better spacing on smaller screens */
+    }
+  }
+  
+</style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Pranjal Tomar</div>
+      <div class="right">
+        <ul>
+          <li id="two">Home</li>
+          <li id="two">About Us</li>
+        </ul>
+        <ul>
+          <li id="three">My Projects</li>
+          <li id="four">Contact Me</li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="leftSection">
+        <p>
+          Hi There| <br>
+          I am Pranjal Tomar & <br>
+          I am a passionate Web Developer
+        </p>
+      </div>
+      <div class="rightSection">
+        <img src="https://www.chooseenergy.com/assets/images/Hero-Graphic-Blog@2x-cf19d5b9b4.png">
+      </div>
+
+    </section>
+    <!-- Add this section after the existing main section -->
+    <section class="about-section">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          Hello, I’m <strong>Pranjal Tomar</strong>, a web developer and a passionate computer science student. I live
+          in Amritsar, but I’m originally from Uttarakhand. I've been fascinated by technology and coding since I was in
+          5th grade. I enjoy creating websites and applications that are <em>user-friendly</em>, <em>responsive</em>,
+          and <em>accessible</em>.
+        </p>
+        <p>
+          I have designed and developed various web projects, such as a personal portfolio, an Amazon clone, a Facebook
+          clone, and many math problem solvers like a calculator. You can find them in my <a
+            href="#projects-section">Projects Section</a>. I've also participated in various competitions, winning
+          awards.
+        </p>
+        <p>
+          I'm always eager to learn new skills and stay updated with the latest technologies. My goal is to become a
+          software engineer or developer and create innovative solutions for real-world problems. Currently, I am a
+          school student.
+        </p>
+        <p>
+          If you are looking for a web developer who can help you with your project or related problems, please feel
+          free to contact me at <a href="mailto:pranjaltomare@gmail.com">pranjaltomare@gmail.com</a>. Thank you for
+          visiting my portfolio, and I hope you will enjoy it.
+        </p>
+      </div>
+    </section>
+    <!-- Add this section after the "About Me" section -->
+    <section class="skills-section">
+      <div class="skills-content">
+        <h2>Skills</h2>
+        <div class="skill-category">
+          <h3>Web Development</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript (ES6+)</li>
+          </ul>
+        </div>
+        <div class="skill-category"><br>
+          <h3>Tools & Technologies</h3>
+          <ul>
+
+            <li>Visual Studio Code</li>
+            <li>PowerPoint</li>
+            <li>AI Manipulating</li>
+          </ul>
+        </div>
+        <div class="skill-category"><br>
+          <h3>Responsive Design</h3>
+          <ul>
+            <li>Media Queries</li>
+            <li>Flexbox</li>
+          </ul>
+        </div>
+
+        <div class="skill-category"><br>
+          <h3>Learning</h3>
+          <ul>
+            <li>Media Queries</li>
+            <li>Figma</li>
+            <li>Advance JS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Add this section after the "Skills" section -->
+    <section class="education-section">
+      <div class="education-content">
+        <h2>Education</h2>
+        <div class="education-details">
+          <h3> Play-Pen</h3>
+          <p><strong>Duration: N/A </strong>
+            Chandigarh
+          </p>
+
+          <h3> TILL 1 <sup>st</sup></h3>
+          <p><strong>Duration: TILL 2016 </strong> ,
+            Srinagar Garhwal, Uttrakhand
+          </p>
+
+          <h3> Class 2<sup>nd</sup> onwards</h3>
+          <p>
+            <strong>Model Study High School</strong>, Amritsar, Punjab<br>
+            Duration : 2018 onwards
+          </p>
+          <h3>Current Class 7<sup>th</sup></h3>
+
+        </div>
+      </div>
+    </section>
+    <!-- Add this section after the "Skills" section -->
+<section class="skills-section">
+  <div class="skills-content">
+      <h2>Skills</h2>
+      
+      <!-- HTML Skills -->
+      <div class="skill-category">
+          <div class="progress-bar">
+              <h3>HTML</h3>
+              <div class="progress" style="width: 95%;">95%</div>
+          </div>
+      </div>
+
+      <!-- CSS Skills -->
+      <div class="skill-category">
+          <div class="progress-bar">
+              <h3>CSS</h3>
+              <div class="progress" style="width: 90%;">90%</div>
+          </div>
+      </div>
+
+      <!-- JavaScript Skills -->
+      <div class="skill-category">
+          <div class="progress-bar">
+              <h3>JavaScript</h3>
+              <div class="progress" style="width: 60%;">60%</div>
+          </div>
+      </div>
+  </div>
+</section>
+  </main>
+
+  <!-- Add this section after the "Skills" section -->
+<footer class="footer-section">
+  <div class="footer-content">
+      <div class="footer-info border" >
+          <h3>Contact Information</h3>
+          <br>
+          <p>Email: pranjaltomare@gmail.com</p>
+          <br>
+          <p>Phone: +1 (123) 456-7890</p>
+      </div>
+      <div class="footer-links border">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Me</a></li>
+              <li><a href="#">My Projects</a></li>
+              <li><a href="#">Contact Me</a></li>
+          </ul>
+      </div>
+      <div class="footer-social border">
+          <h3>Connect with Me</h3>
+          <ul>
+              <li><a href="#" target="_blank">Instagram</a></li>
+              <li><a href="#" target="_blank">Twitter</a></li>
+              <li><a href="#" target="_blank">Replit</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-copyright">
+      <p>&copy; 2023 Pranjal Tomar. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+</body>
+
+</html>
